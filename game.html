@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+
+<head>
+	<title>Ping Pong!</title>
+	<script type="text/javascript"></script>
+	<script> 
+		var canvas;
+		var canvanContext;
+
+		window.onload = function(){
+			canvas = document.getElementById('gameCanvas');
+			canvanContext = canvas.getContext('2d');
+			canvanContext.fillStyle = 'black';
+			canvanContext.fillRect(0,0,canvas.width,canvas.height);
+		} 
+	</script>
+</head>
+<body>
+
+</body>
+</html>
