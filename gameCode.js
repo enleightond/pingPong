@@ -27,11 +27,16 @@ function moveEverything() {
 };
 
 function drawEverything() {
-	canvasContext.fillStyle = 'black';
-	canvasContext.fillRect(0,0,canvas.width,canvas.height);
-	canvasContext.fillStyle = 'white';
-	canvasContext.fillRect(5,200,10,100);
-	canvasContext.fillStyle = 'red';
-	canvasContext.fillRect(ballX,200,50,25);
+	//creates the black playing field
+	colorRect(0,0,canvas.width,canvas.height,'black');
+	//creates the left paddle
+	colorRect(5,200,10,100,'white');
+	//creates the ball
+	colorRect(ballX,200,50,25,'red');
 };
 
+function colorRect(leftX, topY, width, height, drawColor){
+	canvasContext.fillStyle = drawColor;
+	canvasContext.fillRect(leftX, topY, width, height);
+
+}
