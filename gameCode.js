@@ -1,6 +1,7 @@
 var canvas;
 var canvasContext;
-var ballX = 50
+var ballX = 50;
+var ballSpeedX = 5;
 
 window.onload = function(){
 	canvas = document.getElementById('gameCanvas');
@@ -12,11 +13,18 @@ window.onload = function(){
 		moveEverything();
 		drawEverything();
 	}, 1000/framesPerSecond);
-} 
+};
 
 function moveEverything() {
-	ballX = ballX + 5;
-}
+	ballX = ballX + ballSpeedX;
+	if (ballX < 0) {
+		ballSpeedX = -ballSpeedX;
+	};
+
+	if (ballX > canvas.width){
+		ballSpeedX = -ballSpeedX;
+	};
+};
 
 function drawEverything() {
 	canvasContext.fillStyle = 'black';
@@ -25,4 +33,5 @@ function drawEverything() {
 	canvasContext.fillRect(5,200,10,100);
 	canvasContext.fillStyle = 'red';
 	canvasContext.fillRect(ballX,200,50,25);
-}
+};
+
